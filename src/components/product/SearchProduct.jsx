@@ -30,7 +30,7 @@ const SearchProduct = () => {
             {searchProduct?.map((product) => <div key={product._id}>
                 <div className="flex flex-col items-center justify-between w-full gap-3 p-4 rounded-xl 
                       border-2 border-[#00095] shadow-lg hover:shadow-2xl hover:scale-[1.03]
-                      md:hover:scale-[1.05] transition ease-in">
+                      md:hover:scale-[1.05] transition ease-in h-[55vh]">
                     <div>
 
                         <p className="text-[#1d783e] font-semibold text-lg text-left truncate w-40 mt-1">

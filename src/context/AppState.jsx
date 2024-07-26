@@ -48,7 +48,7 @@ const AppState = (props) => {
             withCredentials:true,
     });
     
-    console.log("user register",api);
+    // console.log("user register",api);
     toast.success(api.data.message);
     return api.data;
    };
@@ -79,10 +79,10 @@ const AppState = (props) => {
 
    }
 
-   useEffect(() => {
-     setToken(localStorage.getItem('token'));
-     setisAuthenticated(true)
-   }, [])
+//    useEffect(() => {
+//      setToken(localStorage.getItem('token'));
+//      setisAuthenticated(true)
+//    }, [])
    
 //    userProfile
 const userProfile = async () => {

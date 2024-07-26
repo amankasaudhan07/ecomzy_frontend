@@ -11,6 +11,7 @@ const Navbar = () => {
   const location = useLocation();
   const { setFilteredData, products, logout, isAuthenticated ,cart} = useContext(AppContext);
  
+   console.log("isAuthenticated",isAuthenticated);
   //  console.log("cart is",cart);
   const filterByCategory = (cat) => {
     setFilteredData(
@@ -38,7 +39,7 @@ const Navbar = () => {
             <img src="../logo.png" className="lg:h-14 md:h-10 h-8" alt="" />
           </div>
         </NavLink>
-        <form className="relative min-w-96" onSubmit={submitHandler}>
+        <form className="relative w-96 min-w-44" onSubmit={submitHandler}>
           <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} type="text" placeholder="Search..." className="w-full px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-700 focus:outline-none  focus:border-blue-900" />
           <div className="absolute inset-y-0 right-0 flex items-center pr-3">
             <FaSearch className='hover:cursor-pointer' onClick={submitHandler}/>
@@ -46,6 +47,19 @@ const Navbar = () => {
         </form>
         <div className="flex items-center font-medium text-slate-100 mr-5 space-x-6">
 
+
+        {
+            !isAuthenticated && (
+              <>
+                <NavLink to="/login">
+                  <p>Login</p>
+                </NavLink>
+                <NavLink to="/register">
+                  <p>Register</p>
+                </NavLink>
+              </>
+            )
+          }
           {isAuthenticated && (
             <>
               <NavLink to="/">
@@ -80,21 +94,6 @@ const Navbar = () => {
               </NavLink>
             </>
           )}
-
-
-          {
-            !isAuthenticated && (
-              <>
-                <NavLink to="/login">
-                  <p>Login</p>
-                </NavLink>
-                <NavLink to="/register">
-                  <p>Register</p>
-                </NavLink>
-              </>
-            )
-          }
-
 
         </div>
       </nav>

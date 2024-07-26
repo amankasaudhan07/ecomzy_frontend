@@ -6,13 +6,13 @@ import AppContext from '../../context/AppContext';
 
 const ProductDetail = () => {
 
-    const {addToCart}=useContext(AppContext);
+    const {addToCart,url}=useContext(AppContext);
     const [product, setProduct] = useState();
     const { id } = useParams();
 
     const navigate=useNavigate();
     // console.log(id);
-    const url = "http://localhost:4000/api";
+    // const url = "http://localhost:4000/api";
 
     useEffect(() => {
         const fetchProduct = async () => {
@@ -22,7 +22,7 @@ const ProductDetail = () => {
                 },
                 withCredentials: true,
             });
-            console.log(api.data.product);
+            // console.log(api.data.product);
             setProduct(api.data.product);
 
         };

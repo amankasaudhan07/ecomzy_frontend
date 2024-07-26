@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const RelatedProduct = ({ category }) => {
     const { products,addToCart } = useContext(AppContext);
-    console.log(products);
+    // console.log(products);
     const [relatedProduct, setRealtedProduct] = useState([]);
     useEffect(() => {
       setRealtedProduct(

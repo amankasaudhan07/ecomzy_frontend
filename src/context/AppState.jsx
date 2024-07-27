@@ -62,11 +62,15 @@ const AppState = (props) => {
             withCredentials:true,
     });
     
-    // console.log("user login",api.data);
+    console.log("user login",api);
     toast.success(api.data.message);
-    setToken(api.data.token);
-    setisAuthenticated(true);
-    localStorage.setItem('token',api.data.token)
+
+    if(api.data.success){
+
+        setToken(api.data.token);
+        setisAuthenticated(true);
+        localStorage.setItem('token',api.data.token)
+    }
     return api.data;
    };
 

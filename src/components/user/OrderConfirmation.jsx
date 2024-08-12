@@ -13,7 +13,7 @@ const OrderConfirmation = () => {
     <>
       <div className="flex flex-col justity-between items-center my-6 gap-2 w-full">
         <h1 className="font-bold text-4xl text-[#16a34a]  text-center">Your order has been confirmed,</h1>
-        <h3 className="font-bold text-4xl text-[#16a34a] mb-8 text-center">It will delivered soon</h3>
+        <h3 className="font-bold text-4xl text-[#16a34a] mb-8 text-center">It will be delivered soon</h3>
 
         <table className="bg-slate-400 border-2 border-black w-4/6">
           <thead className="border-b-2 border-black ">

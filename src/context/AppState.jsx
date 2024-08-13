@@ -202,7 +202,7 @@ const shippingAddress = async (fullName,
    
     toast.success(api.data.message);
     // console.log(api);
-
+    getAddress();
     return api.data
   
 }

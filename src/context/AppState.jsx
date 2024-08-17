@@ -83,10 +83,14 @@ const AppState = (props) => {
 
    }
 
-//    useEffect(() => {
-//      setToken(localStorage.getItem('token'));
-//      setisAuthenticated(true)
-//    }, [])
+ useEffect(() => {
+        
+    let lstoken = localStorage.getItem("token");
+    if(lstoken){
+     setToken(localStorage.getItem('token'));
+     setisAuthenticated(true)
+    }
+   }, [])
    
 //    userProfile
 const userProfile = async () => {

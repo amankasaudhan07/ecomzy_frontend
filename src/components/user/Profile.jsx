@@ -7,7 +7,7 @@ const Profile = () => {
     // console.log("user order is",userOrder);
   return (
     <div className='flex flex-col justify-center items-center mt-6 text-gray-900'>
-        <h1 className='font-bold text-4xl text-[#1d783e]'>Welcome, {user?.name}</h1>
+        <h1 className='font-bold text-4xl text-[#1d783e]'>Welcome, {user?.firstName+" "+user?.lastName}</h1>
         <h3  className='mt-2 text-2xl mb-1 text-[#1d783e]'>[{user?.email}]</h3>
        {
          userOrder.length >0 ?(

@@ -11,6 +11,7 @@ const Checkout = () => {
   const {userAddress,cart,url,user,clearCart} =useContext(AppContext);
   const [totalAmount, setTotalAmount] = useState(0);
   const [qty,setQty] = useState(0);
+  console.log("address",userAddress);
 
   const navigate =useNavigate();
 

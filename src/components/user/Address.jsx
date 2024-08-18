@@ -42,7 +42,7 @@ const { fullName,
 const submitHandler = async (event)=> {
   event.preventDefault();
 
-  console.log(formData);
+  // console.log(formData);
   
   const result = await shippingAddress(fullName,
     address,
@@ -53,7 +53,7 @@ const submitHandler = async (event)=> {
     phoneNumber);
  
   
-    console.log(result);
+    // console.log(result);
     
     setFormData({
       fullName:"",

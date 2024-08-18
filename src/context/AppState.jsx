@@ -40,15 +40,16 @@ const AppState = (props) => {
     },[token,reload]);
 
     // register user
-    const register = async (name,email,password) => {
-        const api = await axios.post(`${url}/user/register`,{name,email,password},{
+    const register = async (firstName,lastName,email,password) => {
+        console.log(firstName,lastName,email,password);
+        const api = await axios.post(`${url}/user/register`,{firstName,lastName,email,password},{
             headers:{
                 "Content-Type":"Application/json",
             },
             withCredentials:true,
     });
     
-    // console.log("user register",api);
+    console.log("user register",api);//
     toast.success(api.data.message);
     return api.data;
    };
@@ -62,14 +63,14 @@ const AppState = (props) => {
             withCredentials:true,
     });
     
-    console.log("user login",api);
+    // console.log("user login",api);
     toast.success(api.data.message);
 
     if(api.data.success){
 
         setToken(api.data.token);
         setisAuthenticated(true);
-        localStorage.setItem('token',api.data.token)
+        localStorage.setItem('token',api.data.token);
     }
     return api.data;
    };
@@ -83,10 +84,14 @@ const AppState = (props) => {
 
    }
 
-//    useEffect(() => {
-//      setToken(localStorage.getItem('token'));
-//      setisAuthenticated(true)
-//    }, [])
+   useEffect(() => {
+        
+    let lstoken = localStorage.getItem("token");
+    if(lstoken){
+     setToken(localStorage.getItem('token'));
+     setisAuthenticated(true)
+    }
+   }, [])
    
 //    userProfile
 const userProfile = async () => {
@@ -201,8 +206,8 @@ const shippingAddress = async (fullName,
 });
    
     toast.success(api.data.message);
-    // console.log(api);
-
+    //   console.log("add address",api);
+    getAddress();
     return api.data
   
 }
@@ -216,9 +221,11 @@ const getAddress = async () => {
         },
         withCredentials:true,
 });
+//    console.log(api);
 //    console.log("user address is ",api.data.recentaddress);
   setUserAddress(api.data.recentaddress);
-
+//   console.log("userAddress",userAddress);
+   
 };
 
 // get user order

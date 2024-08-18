@@ -29,16 +29,18 @@ const changeHandler=(event)=> {
 
 }
 
-const { name, email, password } = formData;
+const { firstName,lastName, email, password } = formData;
 
 const submitHandler = async (event)=> {
+  
   event.preventDefault();
+  console.log("formdata",formData);
   if(formData.password != formData.confirmPassword) {
       toast.error("Passwords do not match");
       return ;
   }
   
-  const result = await register(name, email, password);
+  const result = await register(firstName,lastName, email, password);
  
   if(result.success)
    { 

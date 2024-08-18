@@ -11,7 +11,7 @@ const Navbar = () => {
   const location = useLocation();
   const { setFilteredData, products, logout, isAuthenticated ,cart} = useContext(AppContext);
  
-   console.log("isAuthenticated",isAuthenticated);
+  //  console.log("isAuthenticated",isAuthenticated);
   //  console.log("cart is",cart);
   const filterByCategory = (cat) => {
     setFilteredData(
